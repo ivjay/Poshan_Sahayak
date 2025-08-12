@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poshan Sahayak - My Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .bg-cool-gradient {
+            background: #FF0080;
+            background: -webkit-linear-gradient(to right, #FF0080, #FF8C00);
+            background: linear-gradient(to right, #FF0080, #FF8C00);
+        }
+        .text-cool-gradient {
+            background: linear-gradient(to right, #FF0080, #FF8C00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-2xl">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl sm:text-5xl font-bold text-cool-gradient">Poshan Sahayak</h1>
+            <p class="text-gray-400 mt-2">Your Nepali Food Calorie Counter</p>
+            <nav class="mt-6 flex justify-center space-x-6">
+                <a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Meal Tracker 🍕</a>
+                <a href="profile.html" class="font-bold text-lg text-cool-gradient border-b-2 border-cool-gradient transition duration-300">My Profile ✨</a>
+            </nav>
+        </header>
+
+        <main class="bg-gray-800 p-6 rounded-2xl shadow-2xl border border-gray-700">
+            <div class="mb-8 p-6 bg-gray-700 rounded-xl shadow-inner">
+                <h3 class="text-lg font-bold text-gray-200 mb-4 border-b border-gray-600 pb-2">My Information 👤</h3>
+                <div id="profile-display" class="space-y-3 text-gray-300">
+                    <p><strong>Name:</strong> <span id="profile-name" class="font-semibold text-white">Guest User</span></p>
+                    <p><strong>Weight:</strong> <span id="profile-weight" class="font-semibold text-white">--</span> kg</p>
+                    <p><strong>Height:</strong> <span id="profile-height" class="font-semibold text-white">--</span> cm</p>
+                    <p><strong>Daily Calorie Goal:</strong> <span id="profile-calorie-goal" class="font-semibold text-white">--</span> kcal</p>
+                    <p><strong>Today's Calories:</strong> <span id="profile-today-calories" class="font-semibold text-white">--</span> kcal</p>
+                </div>
+                <div class="mt-6">
+                    <button id="edit-profile-btn" class="w-full bg-cool-gradient text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition">Edit Profile</button>
+                </div>
+                
+                <div id="profile-form-container" class="mt-6 hidden">
+                    <h4 class="font-semibold text-gray-200 mb-2">Update Details</h4>
+                    <input type="text" id="profile-name-input" placeholder="Your Name" class="w-full p-3 mb-3 border border-gray-600 rounded-lg bg-gray-800 text-white">
+                    <input type="number" id="profile-weight-input" placeholder="Weight (kg)" class="w-full p-3 mb-3 border border-gray-600 rounded-lg bg-gray-800 text-white">
+                    <input type="number" id="profile-height-input" placeholder="Height (cm)" class="w-full p-3 mb-3 border border-gray-600 rounded-lg bg-gray-800 text-white">
+                    <button id="save-profile-btn" class="w-full bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition">Save Changes</button>
+                </div>
+            </div>
+
+            <div class="mb-8 p-6 bg-gray-700 rounded-xl shadow-inner">
+                <h3 class="text-lg font-bold text-gray-200 mb-4 border-b border-gray-600 pb-2">BMI Summary 📊</h3>
+                <div id="bmi-result" class="text-center p-4 rounded-lg">
+                    <p class="text-lg font-semibold text-gray-300">Your BMI: <span id="bmi-value" class="text-3xl font-bold text-cool-gradient">--</span></p>
+                    <p id="bmi-category" class="text-sm font-medium mt-1"></p>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-lg font-bold text-gray-200 mb-4 border-b border-gray-600 pb-2">Monthly Calorie Progress 📈</h3>
+                <div class="p-4 bg-gray-700 rounded-xl shadow-inner">
+                    <canvas id="monthly-calories-chart"></canvas>
+                </div>
+            </div>
+        </main>
+        <footer class="text-center mt-8 text-sm text-gray-600">
+            <p>&copy; 2025 Poshan Sahayak Initiative. For illustrative purposes only.</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
